@@ -1,6 +1,8 @@
 import React from 'react';
 
-const InvestmentsList = () => {
+const InvestmentsList = (props) => {
+
+    console.log('props' + props.yearlyData);
 
     return (
         <table className="result">
@@ -14,13 +16,21 @@ const InvestmentsList = () => {
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td>YEAR NUMBER</td>
-                <td>TOTAL SAVINGS END OF YEAR</td>
-                <td>INTEREST GAINED IN YEAR</td>
-                <td>TOTAL INTEREST GAINED</td>
-                <td>TOTAL INVESTED CAPITAL</td>
-            </tr>
+
+            {props.yearlyData.length === 0 ? (
+                <p>No data found</p>
+            ) : (
+                props.yearlyData.map((investment) => (
+                    <tr>
+                        <td>{investment.year}</td>
+                        <td>{investment.savingsEndOfYear}</td>
+                        <td>{investment.yearlyInterest}</td>
+                        <td>TOTAL INTEREST GAINED</td>
+                        <td>{investment.yearlyContribution}</td>
+                    </tr>
+                ))
+            )}
+
             </tbody>
         </table>
     )

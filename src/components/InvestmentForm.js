@@ -38,7 +38,7 @@ const InvestmentForm = (props) => {
             savings: 100,
             yearlySavings: 1000,
             expectedInterest: 3,
-            investmentDuration: 3,
+            investmentDuration: 5,
         }
 
         // console.log(investmentData);
@@ -61,7 +61,7 @@ const InvestmentForm = (props) => {
                     <label htmlFor="current-savings">Current Savings ($)</label>
                     <input type="number"
                            id="current-savings"
-                           // value={enteredSavings}
+                           value={enteredSavings}
                            onChange={setEnteredSavings}
                     />
                 </p>
@@ -69,7 +69,7 @@ const InvestmentForm = (props) => {
                     <label htmlFor="yearly-contribution">Yearly Savings ($)</label>
                     <input type="number"
                            id="yearly-contribution"
-                           // value={yearlySavings}
+                           value={yearlySavings}
                            onChange={setYearlySavings}
                     />
                 </p>
@@ -81,7 +81,7 @@ const InvestmentForm = (props) => {
                     </label>
                     <input type="number"
                            id="expected-return"
-                           // value={expectedInterest}
+                           value={expectedInterest}
                            onChange={setExpectedInterest}
                     />
                 </p>
@@ -89,7 +89,7 @@ const InvestmentForm = (props) => {
                     <label htmlFor="duration">Investment Duration (years)</label>
                     <input type="number"
                            id="duration"
-                           // value={expectedInterest}
+                           value={investmentDuration}
                            onChange={setInvestmentDuration}
                     />
                 </p>
