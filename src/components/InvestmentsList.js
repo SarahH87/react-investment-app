@@ -18,7 +18,9 @@ const InvestmentsList = (props) => {
             <tbody>
 
             {props.yearlyData.length === 0 ? (
-                <p>No data found</p>
+                <tr>
+                    <td>No data found</td>
+                </tr>
             ) : (
                 props.yearlyData.map((investment) => (
                     <tr>

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 const InvestmentForm = (props) => {
     const [enteredSavings, setEnteredSavings] = useState('');
-    const [yearlySavings, setYearlySavings] = useState('');
-    const [expectedInterest, setExpectedInterest] = useState('');
-    const [investmentDuration, setInvestmentDuration] = useState('');
+    const [enteredYearlySavings, setYearlySavings] = useState('');
+    const [enteredExpectedInterest, setExpectedInterest] = useState('');
+    const [enteredInvestmentDuration, setInvestmentDuration] = useState('');
 
     const savingsChangeHandler = (event) => {
         setEnteredSavings(event.target.value);
@@ -25,29 +25,22 @@ const InvestmentForm = (props) => {
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
-        console.log('submitted');
-
-        // const investmentData = {
-        //     savings: enteredSavings,
-        //     yearlySavings: yearlySavings,
-        //     expectedInterest: expectedInterest,
-        //     investmentDuration: investmentDuration,
-        // }
 
         const investmentData = {
-            savings: 100,
-            yearlySavings: 1000,
-            expectedInterest: 3,
-            investmentDuration: 5,
+            savings: enteredSavings,
+            yearlySavings: enteredYearlySavings,
+            expectedInterest: enteredExpectedInterest,
+            investmentDuration: enteredInvestmentDuration,
         }
 
-        // console.log(investmentData);
         props.onSaveInvestmentData(investmentData);
 
-        setEnteredSavings('');
-        setYearlySavings( '');
-        setExpectedInterest('');
-        setInvestmentDuration('');
+        console.log('form submit function working');
+        //
+        // setEnteredSavings('');
+        // setYearlySavings( '');
+        // setExpectedInterest('');
+        // setInvestmentDuration('');
     };
 
     const resetButtonHandler = (event) => {
@@ -62,15 +55,15 @@ const InvestmentForm = (props) => {
                     <input type="number"
                            id="current-savings"
                            value={enteredSavings}
-                           onChange={setEnteredSavings}
+                           onChange={savingsChangeHandler}
                     />
                 </p>
                 <p>
                     <label htmlFor="yearly-contribution">Yearly Savings ($)</label>
                     <input type="number"
                            id="yearly-contribution"
-                           value={yearlySavings}
-                           onChange={setYearlySavings}
+                           value={enteredYearlySavings}
+                           onChange={yearlySavingsChangeHandler}
                     />
                 </p>
             </div>
@@ -81,16 +74,16 @@ const InvestmentForm = (props) => {
                     </label>
                     <input type="number"
                            id="expected-return"
-                           value={expectedInterest}
-                           onChange={setExpectedInterest}
+                           value={enteredExpectedInterest}
+                           onChange={expectedInterestHandler}
                     />
                 </p>
                 <p>
                     <label htmlFor="duration">Investment Duration (years)</label>
                     <input type="number"
                            id="duration"
-                           value={investmentDuration}
-                           onChange={setInvestmentDuration}
+                           value={enteredInvestmentDuration}
+                           onChange={investmentDurationHandler}
                     />
                 </p>
             </div>
