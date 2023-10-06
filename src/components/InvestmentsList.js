@@ -24,6 +24,7 @@ const InvestmentsList = (props) => {
                 props.yearlyData.map((investment) => (
                     <Investment key={investment.year}
                                 year={investment.year}
+                                totalInterest={investment.totalInterest}
                                 savingsEndOfYear={investment.savingsEndOfYear}
                                 yearlyInterest={investment.yearlyInterest}
                                 yearlyContribution={investment.yearlyContribution}

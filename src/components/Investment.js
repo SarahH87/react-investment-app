@@ -7,7 +7,7 @@ function Investment(props) {
             <td>{props.year}</td>
             <td>{props.savingsEndOfYear}</td>
             <td>{props.yearlyInterest}</td>
-            <td>TOTAL INTEREST GAINED</td>
+            <td>{props.totalInterest}</td>
             <td>{props.yearlyContribution}</td>
         </tr>
     );
