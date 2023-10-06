@@ -33,15 +33,13 @@ const InvestmentForm = (props) => {
         }
 
         props.onSaveInvestmentData(investmentData);
-        //
-        // setEnteredSavings('');
-        // setYearlySavings( '');
-        // setExpectedInterest('');
-        // setInvestmentDuration('');
     };
 
     const resetButtonHandler = (event) => {
-      console.log('reset button clicked');
+        setEnteredSavings('');
+        setYearlySavings( '');
+        setExpectedInterest('');
+        setInvestmentDuration('');
     };
 
     return (
