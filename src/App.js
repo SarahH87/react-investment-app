@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Header from './components/Header';
-import InvestmentForm from "./components/InvestmentForm";
-import InvestmentsList from "./components/InvestmentsList";
+import Header from './components/Header/Header';
+import InvestmentForm from "./components/InvestmentForm/InvestmentForm";
+import InvestmentsList from "./components/Investments/InvestmentsList";
 
 function App() {
     const [yearlyInvestmentData, setYearlyInvestmentData] = useState([]);
