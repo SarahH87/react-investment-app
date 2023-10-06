@@ -5,19 +5,9 @@ import InvestmentForm from "./components/InvestmentForm";
 import InvestmentsList from "./components/InvestmentsList";
 
 function App() {
-    // const DUMMY_INVESTMENTS = [
-    //     {
-    //         year: '',
-    //         yearlyInterest: '',
-    //         savingsEndOfYear: '',
-    //         yearlyContribution: '',
-    //     },
-    // ];
-
     const [yearlyInvestmentData, setYearlyInvestmentData] = useState([]);
 
     const saveInvestmentData = (userInput) => {
-        console.log('Data saving');
         const yearlyData = []; // per-year results
 
         let currentSavings = +userInput.savings;
@@ -38,11 +28,7 @@ function App() {
             });
         }
 
-        console.log(yearlyData);
-
-        setYearlyInvestmentData((prevInvestmentData) => {
-            return [yearlyData, ...prevInvestmentData];
-        });
+        setYearlyInvestmentData(yearlyData);
     };
 
     const calculateHandler = (userInput) => {
@@ -78,8 +64,6 @@ function App() {
 
           <InvestmentForm onSaveInvestmentData={saveInvestmentData} />
 
-          {/* Todo: Show below table conditionally (only once result data is available) */}
-          {/* Show fallback text if no data is available */}
           <InvestmentsList yearlyData={yearlyInvestmentData} />
         </div>
     );

@@ -8,7 +8,6 @@ const InvestmentForm = (props) => {
 
     const savingsChangeHandler = (event) => {
         setEnteredSavings(event.target.value);
-        console.log('called');
     };
 
     const yearlySavingsChangeHandler = (event) => {
@@ -34,8 +33,6 @@ const InvestmentForm = (props) => {
         }
 
         props.onSaveInvestmentData(investmentData);
-
-        console.log('form submit function working');
         //
         // setEnteredSavings('');
         // setYearlySavings( '');

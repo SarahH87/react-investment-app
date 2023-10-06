@@ -1,8 +1,7 @@
 import React from 'react';
+import Investment from "./Investment";
 
 const InvestmentsList = (props) => {
-
-    console.log('props' + props.yearlyData);
 
     return (
         <table className="result">
@@ -23,13 +22,12 @@ const InvestmentsList = (props) => {
                 </tr>
             ) : (
                 props.yearlyData.map((investment) => (
-                    <tr>
-                        <td>{investment.year}</td>
-                        <td>{investment.savingsEndOfYear}</td>
-                        <td>{investment.yearlyInterest}</td>
-                        <td>TOTAL INTEREST GAINED</td>
-                        <td>{investment.yearlyContribution}</td>
-                    </tr>
+                    <Investment key={investment.year}
+                                year={investment.year}
+                                savingsEndOfYear={investment.savingsEndOfYear}
+                                yearlyInterest={investment.yearlyInterest}
+                                yearlyContribution={investment.yearlyContribution}
+                    />
                 ))
             )}
 
